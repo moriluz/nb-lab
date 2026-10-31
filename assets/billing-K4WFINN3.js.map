@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/billing.js"],
+  "sourcesContent": ["import { supabase } from \"./supabase.js\";\nexport async function showBilling(user) {\n  const { data } = await supabase.from(\"invoices\").select(\"id, amount, status, created_at\").eq(\"user_id\", user.id);\n  document.getElementById(\"panel\").innerHTML = (data ?? []).map((i) => `<li>${i.amount} \u2014 ${i.status}</li>`).join(\"\");\n}\n"],
+  "mappings": "sDACA,eAAsBA,EAAYC,EAAM,CACtC,GAAM,CAAE,KAAAC,CAAK,EAAI,MAAMC,EAAS,KAAK,UAAU,EAAE,OAAO,gCAAgC,EAAE,GAAG,UAAWF,EAAK,EAAE,EAC/G,SAAS,eAAe,OAAO,EAAE,WAAaC,GAAQ,CAAC,GAAG,IAAKE,GAAM,OAAOA,EAAE,MAAM,WAAMA,EAAE,MAAM,OAAO,EAAE,KAAK,EAAE,CACpH,CAJA,IAAAC,EAAAC,EAAA,KAAAC",
+  "names": ["showBilling", "user", "data", "supabase", "i", "init_billing", "__esmMin", "init_supabase"]
+}

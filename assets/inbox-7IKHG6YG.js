@@ -1,0 +1,2 @@
+import{a as s,c as n,d as o}from"./chunk-E3IS6AUI.js";async function d(t){let{data:e}=await n.from("messages").select("id, sender_id, content, created_at").order("created_at",{ascending:!1});document.getElementById("panel").innerHTML=(e??[]).map(a=>`<li>${a.content}</li>`).join("")}async function c(t,e){await n.from("messages").insert({sender_id:t.id,content:e})}var i=s(()=>{o()});i();export{c as send,d as showInbox};
+//# sourceMappingURL=inbox-7IKHG6YG.js.map
